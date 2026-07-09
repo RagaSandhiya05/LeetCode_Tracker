@@ -1,0 +1,23 @@
+// Last updated: 7/9/2026, 9:55:13 AM
+// Remove Covered Intervals
+class Solution {
+    public int removeCoveredIntervals(int[][] intervals) {
+        Arrays.sort(intervals , (a , b) -> {
+            if(a[0] == b[0])
+            return b[1] - a[1];
+            return a[0] - b[0];
+        });
+        int ans = intervals.length;
+        int maxEnd = 0;
+        for(int curr[] : intervals) {
+            if(curr[1] <= maxEnd) {
+                ans--;
+            }
+            else {
+                maxEnd = curr[1];
+            }
+        }
+        return ans;
+    }
+}
+            
