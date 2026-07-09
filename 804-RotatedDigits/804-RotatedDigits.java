@@ -1,0 +1,28 @@
+// Last updated: 7/9/2026, 9:56:01 AM
+// Rotated Digits
+class Solution {
+    public int rotatedDigits(int n) {
+        int count = 0;
+        for(int i = 1 ; i <= n ; i++) {
+            int num = i;
+            boolean isValid = true;
+            boolean hasChange = false;
+            while(num > 0) {
+                int digit = num % 10;
+                if(digit == 3 || digit == 4 || digit == 7) {
+                    isValid = false;
+                    break;
+                }
+                if(digit == 2 || digit == 5 || digit == 6 || digit == 9) {
+                    hasChange = true;
+                }
+                num = num / 10;
+            }
+            if(isValid && hasChange) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+           
