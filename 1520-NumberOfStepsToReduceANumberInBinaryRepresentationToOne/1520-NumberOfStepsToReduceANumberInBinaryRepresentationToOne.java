@@ -1,0 +1,19 @@
+// Last updated: 7/9/2026, 9:54:22 AM
+//Number of Steps to Reduce a Number in Binary Representation to One
+class Solution {
+    public int numSteps(String s) {
+        int steps = 0;
+        int carry = 0;
+        for(int i = s.length() - 1 ; i > 0 ; i--) {
+            int bit = s.charAt(i) - '0' + carry;
+            if(bit == 1) {
+                carry = 1;
+                steps = steps + 2;
+            } else {
+                steps++;
+            }
+        }
+        return steps + carry;
+    }
+}
+            
