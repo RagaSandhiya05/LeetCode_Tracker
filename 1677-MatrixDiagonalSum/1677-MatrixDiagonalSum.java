@@ -1,0 +1,18 @@
+// Last updated: 7/9/2026, 9:53:55 AM
+// Matrix Diagonal Sum
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+        int sum = 0;
+        for(int i = 0 ; i < n ; i++) {
+            for(int j = 0 ; j < m ; j++) {
+                if((i == j) || (i + j == n - 1)) {
+                    sum = sum + mat[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+}
+         
