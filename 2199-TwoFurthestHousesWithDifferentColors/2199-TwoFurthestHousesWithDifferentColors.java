@@ -1,0 +1,17 @@
+// Last updated: 7/9/2026, 9:52:10 AM
+// Two Furthest Houses With Different Colors
+class Solution {
+    public int maxDistance(int[] colors) {
+        int distance = 0;
+        int n = colors.length;
+        for(int i = 0 ; i < n ; i++) {
+            for(int j = i + 1 ; j < n ; j++) {
+                if(colors[i] != colors[j]) {
+                    distance = Math.max(distance , j - i);
+                }
+            }
+        }
+        return distance;
+    }
+}
+               
